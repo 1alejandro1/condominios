@@ -1,7 +1,5 @@
 <?php
-
 	session_start();
-
 	if(isset($_SESSION["idusuario"]) && $_SESSION["mnu_ventas"] == 1){
 		include "view/header.html";
 

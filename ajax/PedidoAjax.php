@@ -285,6 +285,7 @@ switch ($_GET["op"]) {
 
         break;
 
+
     case "CambiarEstado" :
         require_once "../model/Pedido.php";
 
@@ -360,6 +361,7 @@ switch ($_GET["op"]) {
         $query_cli = $objPedido->ListarDetalleIngresos($_SESSION["idsucursal"]);
 
 
+
         //date_default_timezone_set('America/La_Paz');
         //$fecha_actual = date("Y-m-d");
 
@@ -422,15 +424,15 @@ switch ($_GET["op"]) {
                       <button type="button" class="btn btn-warning" name="optDetIngBusqueda[]" data-descripcionPed="' . $escribir . '"
                       data-tipoPrecioPed="' . $tienda . '" data-nombre="' . $reg->Articulo . '" data-precio-venta="' . $reg->P_venta . '"
                       data-stock-actual="' . $stock_actual . '" id="' . $reg->iddetalle_ingreso . '" value="' . $reg->iddetalle_ingreso . '"
-                      data-toggle="tooltip" title="Agregar al carrito PVenta"
-                      onclick="AgregarPedCarrito(' . $reg->iddetalle_ingreso . ',\'' . $reg->stock_actual . '\',\'' . $reg->Articulo . '\',\'' . $escribir . '\',\'' . $tienda . '\',\'' . $reg->P_venta . '\',\'' . $reg->stock_actual . '\');changeColor(this);" >
+                      data-idarticulo="' .  $reg->idarticulo . '" data-toggle="tooltip" title="Agregar al carrito PVenta"
+                      onclick="AgregarPedCarrito(' . $reg->iddetalle_ingreso . ',\'' . $reg->stock_actual . '\',\'' . $reg->Articulo . '\',\'' . $escribir . '\',\'' . $tienda . '\',\'' . $reg->P_venta . '\',\'' . $reg->stock_actual . '\',\'' . $reg->idarticulo  . '\');changeColor(this);" >
                       <i class="fa fa-check" >Precio Venta</i> </button></br>
 
                       <button type="button" class="btn btn-warning" name="optDetIngBusqueda[]" data-descripcionPed="' . $escribir . '"
                       data-tipoPrecioPed="' . $mayor . '" data-nombre="' . $reg->Articulo . '" data-precio-venta="' . $reg->P_mayor . '"
                       data-stock-actual="' . $stock_actual . '" id="' . $reg->iddetalle_ingreso . '" value="' . $reg->iddetalle_ingreso . '"
-                      data-toggle="tooltip" title="Agregar al carrito Pmayor"
-                      onclick="AgregarPedCarrito(' . $reg->iddetalle_ingreso . ',\'' . $reg->stock_actual . '\',\'' . $reg->Articulo . '\',\'' . $escribir . '\',\'' . $mayor . '\',\'' . $reg->P_mayor . '\',\'' . $reg->stock_actual . '\');changeColor(this);" >
+                      data-idarticulo="' .  $reg->idarticulo . '" data-toggle="tooltip" title="Agregar al carrito Pmayor"
+                      onclick="AgregarPedCarrito(' . $reg->iddetalle_ingreso . ',\'' . $reg->stock_actual . '\',\'' . $reg->Articulo . '\',\'' . $escribir . '\',\'' . $mayor . '\',\'' . $reg->P_mayor . '\',\'' . $reg->stock_actual . '\',\'' . $reg->idarticulo  . '\');changeColor(this);" >
                       <i class="fa fa-check" >Precio X Mayor</i> </button>',
 
 
@@ -444,7 +446,8 @@ switch ($_GET["op"]) {
                     "8" => $reg->vrestringida,
                     "9" => "<span class='rojo'>$mensaje<br></span><br><span class='rojo'>$stock_actual</span>",
                     "10" => $reg->P_venta,
-                    "11" => $reg->P_mayor);
+                    "11" => $reg->P_mayor,
+                    "12" => $reg->idarticulo);
 
             }
 
@@ -483,17 +486,17 @@ switch ($_GET["op"]) {
           							}
                         </script>
                         <button type="button" class="btn btn-warning" name="optDetIngBusqueda[]" data-descripcionPed="' . $escribir . '"
-                        data-tipoPrecioPed="' . $tienda . '" data-nombre="' . $reg->Articulo . '" data-precio-venta="' . $reg->P_venta . '"
+                        data-tipoPrecioPed="' . $tienda . '" data-idarticulo="' . $reg->idarticulo . '" data-nombre="' . $reg->Articulo . '" data-precio-venta="' . $reg->P_venta . '"
                         data-stock-actual="' . $stock_actual . '" id="' . $reg->iddetalle_ingreso . '" value="' . $reg->iddetalle_ingreso . '"
                         data-toggle="tooltip" title="Agregar al carrito PVenta"
-                        onclick="AgregarPedCarrito(' . $reg->iddetalle_ingreso . ',\'' . $reg->stock_actual . '\',\'' . $reg->Articulo . '\',\'' . $escribir . '\',\'' . $tienda . '\',\'' . $reg->P_venta . '\',\'' . $reg->stock_actual . '\');changeColor(this);" >
+                        onclick="AgregarPedCarrito(' . $reg->iddetalle_ingreso . ',\'' . $reg->stock_actual . '\',\'' . $reg->Articulo . '\',\'' . $escribir . '\',\'' . $tienda . '\',\'' . $reg->P_venta . '\',\'' . $reg->stock_actual . '\',\'' . $reg->idarticulo  . '\');changeColor(this);" >
                         <i class="fa fa-check" >Precio Venta</i> </button></br>
 
                         <button type="button" class="btn btn-warning" name="optDetIngBusqueda[]" data-descripcionPed="' . $escribir . '"
-                        data-tipoPrecioPed="' . $mayor . '" data-nombre="' . $reg->Articulo . '" data-precio-venta="' . $reg->P_mayor . '"
+                        data-tipoPrecioPed="' . $mayor . '" data-idarticulo="' . $reg->idarticulo . '" data-nombre="' . $reg->Articulo . '" data-precio-venta="' . $reg->P_mayor . '"
                         data-stock-actual="' . $stock_actual . '" id="' . $reg->iddetalle_ingreso . '" value="' . $reg->iddetalle_ingreso . '"
                         data-toggle="tooltip" title="Agregar al carrito Pmayor"
-                        onclick="AgregarPedCarrito(' . $reg->iddetalle_ingreso . ',\'' . $reg->stock_actual . '\',\'' . $reg->Articulo . '\',\'' . $escribir . '\',\'' . $mayor . '\',\'' . $reg->P_mayor . '\',\'' . $reg->stock_actual . '\');changeColor(this);" >
+                        onclick="AgregarPedCarrito(' . $reg->iddetalle_ingreso . ',\'' . $reg->stock_actual . '\',\'' . $reg->Articulo . '\',\'' . $escribir . '\',\'' . $mayor . '\',\'' . $reg->P_mayor . '\',\'' . $reg->stock_actual . '\',\'' . $reg->idarticulo  . '\');changeColor(this);" >
                         <i class="fa fa-check" >Precio X Mayor</i> </button>',
 
 
@@ -507,7 +510,8 @@ switch ($_GET["op"]) {
                     "8" => $reg->vrestringida,
                     "9" => "<span class='verde'>$stock_actual</span>",
                     "10" => $reg->P_venta,
-                    "11" => $reg->P_mayor);
+                    "11" => $reg->P_mayor,
+                    "12" => $reg->idarticulo);
 
             }
 
