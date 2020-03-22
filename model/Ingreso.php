@@ -99,7 +99,8 @@
                                           where idarticulo = ".$reg['idarticulo']." ";
                  $conexion->query($sql_cantidad);
                 $sql_detalle_cantidad = "update detalle_ingreso set stock_actual = stock_actual - '".$reg["stock_ingreso"]."'
-                                          where idarticulo = ".$reg['idarticulo']." ";
+                                          where idarticulo = ".$reg['idarticulo']." 
+                                          and idingreso = $idingreso";
                 $conexion->query($sql_detalle_cantidad);
              }
 
