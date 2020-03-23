@@ -912,10 +912,10 @@ function ListadoIngresos(){
 
     }
 
-    function cancelarIngreso(idIngreso){
+    function cancelarIngreso(idIngreso, idArticulo){
         bootbox.confirm("¿Esta Seguro de Anular el ingreso?", function(result){
             if(result){
-                $.post("./ajax/IngresoAjax.php?op=CambiarEstado", {idIngreso : idIngreso}, function(e){
+                $.post("./ajax/IngresoAjax.php?op=CambiarEstado", {idIngreso : idIngreso, idArticulo: idArticulo}, function(e){
 
                     swal("Mensaje del Sistema", e, "success");
                     ListadoIngresos();
