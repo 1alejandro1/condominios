@@ -194,7 +194,7 @@ $("form#frmcreditos").submit(Savecredito);
 
     function GenerarVenta(e){
       e.preventDefault();
-
+        
 switch ($("#cboTipoComprobante").val()) {
   case "TICKET":
 if ($("#tipo_venta").val() == "contado") {
@@ -204,7 +204,7 @@ if ($("#tipo_venta").val() == "contado") {
 
       var data = {
       idUsuario : $("#txtIdUsuario").val(), // usuario logueado
-      idSucursal : $("#txtIdSucursal").val(),// sucursal
+      idSucursal: $("#txtIdSucursal").val(),// sucursal
       tipo_comprobante : $("#cboTipoComprobante").val(),
       totalVenta : $("#txtTotalPed").val(),
       nombre_cliente : $("#txtNombre").val(),
