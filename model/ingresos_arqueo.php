@@ -34,7 +34,7 @@
 
 		$sw = true;
 		$sql_detalle = "INSERT INTO movimiento_caja(motivo,monto, idusuario,idsucursal,fecha,tipo_operacion)
-						VALUES('$motivo','$monto' , '$id_usuario', '$id_sucursal','$today','$tipo_transaccion')";
+						VALUES('$motivo','$monto' , '$id_usuario', '$id_sucursal',curdate(),'$tipo_transaccion')";
 		$conexion->query($sql_detalle) or $sw = false;
 		return $sw;
 	}
@@ -44,7 +44,7 @@
 		$today = date("Y-m-d");
 
 		$sql = "UPDATE movimiento_caja SET monto = $monto
-				WHERE idsucursal = $idsucursal  AND  idusuario = $idusuario AND fecha='$today' and tipo_operacion='APERTURA'" ;
+				WHERE idsucursal = $idsucursal  AND  idusuario = $idusuario AND fecha=curdate() and tipo_operacion='APERTURA'" ;
 		$query = $conexion->query($sql);
 		return $query;
 	}
@@ -75,7 +75,7 @@
 
 					$sql_detalle = "INSERT INTO movimiento_caja(idingresocaja,motivo,monto, idusuario,idsucursal,fecha,tipo_operacion)
 
-											VALUES(null,'$valor[3]','$valor[4]' , '$id_usuario', '$id_sucursal','$today','$tipo_transaccion')";
+											VALUES(null,'$valor[3]','$valor[4]' , '$id_usuario', '$id_sucursal',curdate(),'$tipo_transaccion')";
 
 
 
@@ -110,7 +110,7 @@
 
 			$sql = "UPDATE movimiento_caja set motivo = '$motivo',
 
-						monto = $monto, fecha = '$today' , tipo_operacion ='$transaccion'
+						monto = $monto, fecha = curdate() , tipo_operacion ='$transaccion'
 
 						where idingresocaja = $iddetalle_documento_sucursal AND idsucursal = $idsucursal  AND  idusuario = $usuario " ;
 
