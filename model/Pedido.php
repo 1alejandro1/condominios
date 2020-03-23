@@ -55,8 +55,8 @@ class Pedido
                 $conexion->query($sql_detalle);
 
 
-                $sql_restar_articulo = "UPDATE articulo set cantidad = cantidad  - " . $valor[3] . " where idarticulo = " . $valor[9] . "";
-                $conexion->query($sql_restar_articulo);
+               // $sql_restar_articulo = "UPDATE articulo set cantidad = cantidad  - " . $valor[3] . " where idarticulo = " . $valor[9] . "";
+                //$conexion->query($sql_restar_articulo);
 
 
             }
