@@ -12,6 +12,12 @@ class Traspaso
     public function Registrar($idusuario, $idsucursalorigen, $idsucursaldestino, $fecha, $motivo, $detalle)
     {
         global $conexion;
+
+        require_once "../model/Articulo.php";
+
+        $objArticulo = new Articulo();
+
+
         $sql = "INSERT INTO traspaso (idusuario, idsucursalorigen, idsucursaldestino, fecha, motivo, estado)
 						VALUES($idusuario, $idsucursalorigen, $idsucursaldestino, '$fecha', '$motivo', 'P')";
         $query = $conexion->query($sql);
@@ -21,6 +27,17 @@ class Traspaso
 // actualizamos la tabla de idingreso de los productos
 // [5] es igual  al sotk actual del producto  [3] cantidad  que estoy comprando entonces restamos y colocamos el nuevo stock
         foreach ($detalle as $indice => $valor) {
+
+            $query_Tipo = $objArticulo->GetStock($idsucursaldestino, $valor[9]);
+            if ($reg = $query_Tipo->fetch_object()) {
+                $stockActual = $reg->stock_actual;
+            } else {
+                $stockActual = 0;
+            }
+
+            $suma = $stockActual + $valor[3];
+
+
 
             $idingresoanterior = $valor[8];
             $idingresonuevo = 0;
@@ -56,9 +73,11 @@ class Traspaso
                 $idingresonuevo = $conexion->insert_id;
             }
 
+
+
 // Agregar en detalle_ingreso los artículos traspasados a la nueva sucursal.
             $sql_detalleingreso = "INSERT INTO detalle_ingreso (idingreso, idarticulo, codigo, serie, descripcion, stock_ingreso, stock_actual, precio_compra, precio_ventadistribuidor, precio_ventapublico)
-										VALUES($idingresonuevo, " . $valor[9] . ", '" . $valor[6] . "', '" . $valor[7] . "', '" . $valor[10] . "', " . $valor[3] . ", " . $valor[3] . ", " . $valor[11] . ", " . $valor[12] . ", " . $valor[2] . ")";
+										VALUES($idingresonuevo, " . $valor[9] . ", '" . $valor[6] . "', '" . $valor[7] . "', '" . $valor[10] . "', " . $valor[3] . ", " . $suma . ", " . $valor[11] . ", " . $valor[12] . ", " . $valor[2] . ")";
             $conexion->query($sql_detalleingreso) or $sw = false;
 
 // ahora agregamos lo que falta en la tabla detalle_traspaso despues de recuperar el idtraspaso
