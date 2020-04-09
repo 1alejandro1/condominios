@@ -26,14 +26,14 @@
 
 		public function Eliminar($idempleado){
 			global $conexion;
-			$sql = "DELETE FROM empleado WHERE idempleado = $idempleado";
+			$sql = "UPDATE empleado SET estado= 'C' WHERE idempleado = $idempleado";
 			$query = $conexion->query($sql);
 			return $query;
 		}
 
 		public function Listar(){
 			global $conexion;
-			$sql = "SELECT * FROM empleado WHERE  empleado.estado != 'S' order by idempleado desc";
+			$sql = "SELECT * FROM empleado WHERE  empleado.estado <> 'S' and empleado.estado <> 'C' order by idempleado desc";
 			$query = $conexion->query($sql);
 			return $query;
 		}

@@ -83,7 +83,7 @@ function ListadoUnidad_Medida(){
 };
 
 function eliminarUnidad_Medida(id){// funcion que llamamos del archivo ajax/CategoriaAjax.php?op=delete linea 53
-	bootbox.confirm("¿Esta Seguro de eliminar la Unidad de Medida?", function(result){ // confirmamos con una pregunta si queremos eliminar
+	bootbox.confirm("¿Esta Seguro de eliminar la Marca?", function(result){ // confirmamos con una pregunta si queremos eliminar
 		if(result){// si el result es true
 			$.post("./ajax/Unidad_MedidaAjax.php?op=delete", {id : id}, function(e){// llamamos la url de eliminar por post. y mandamos por parametro el id 
                 

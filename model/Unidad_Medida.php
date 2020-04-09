@@ -25,14 +25,14 @@
 		
 		public function Eliminar($idunidad_medida){
 			global $conexion;
-			$sql = "DELETE FROM unidad_medida WHERE idunidad_medida = $idunidad_medida";
+			$sql = "UPDATE unidad_medida SET estado='C' WHERE idunidad_medida = $idunidad_medida";
 			$query = $conexion->query($sql);
 			return $query;
 		}
 
 		public function Listar(){
 			global $conexion;
-			$sql = "SELECT * FROM unidad_medida order by idunidad_medida desc";
+			$sql = "SELECT * FROM unidad_medida where estado='A' order by idunidad_medida desc";
 			$query = $conexion->query($sql);
 			return $query;
 		}

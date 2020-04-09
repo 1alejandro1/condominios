@@ -25,14 +25,14 @@
 		
 		public function Eliminar($idcategoria){
 			global $conexion;
-			$sql = "DELETE FROM categoria WHERE idcategoria = $idcategoria";
+			$sql = "UPDATE categoria SET estado = 'C' WHERE idcategoria = $idcategoria";
 			$query = $conexion->query($sql);
 			return $query;
 		}
 
 		public function Listar(){
 			global $conexion;
-			$sql = "SELECT * FROM categoria order by idcategoria desc";
+			$sql = "SELECT * FROM categoria where estado = 'A' order by idcategoria desc";
 			$query = $conexion->query($sql);
 			return $query;
 		}

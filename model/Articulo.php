@@ -26,7 +26,7 @@
 
 		public function Eliminar($idarticulo){
 			global $conexion;
-			$sql = "delete from articulo WHERE idarticulo = '$idarticulo'";
+			$sql = "UPDATE articulo SET estado= 'C' WHERE idarticulo = '$idarticulo' ";
 			$query = $conexion->query($sql);
 			return $query;
 		}

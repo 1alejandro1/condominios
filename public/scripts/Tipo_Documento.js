@@ -91,6 +91,11 @@ function eliminarTipo_Documento(id){// funcion que llamamos del archivo ajax/Cat
 }
 
 function cargarDataTipo_Documento(id, nombre,operacion){// funcion que llamamos del archivo ajax/CategoriaAjax.php linea 52
+    bootbox.confirm("¿Esta Seguro de editar el tipo de documento? esto puede afectar a la configuración del Sistema", function (
+      result
+    ) {
+      // confirmamos con una pregunta si queremos eliminar
+      if (result) {
 		$("#VerForm").show();// mostramos el formulario
 		$("#btnNuevo").hide();// ocultamos el boton nuevo
 		$("#VerListado").hide();
@@ -98,4 +103,6 @@ function cargarDataTipo_Documento(id, nombre,operacion){// funcion que llamamos 
 		$("#txtIdTipo_Documento").val(id);// recibimos la variable id a la caja de texto txtIdCategoria
 	    $("#txtNombre").val(nombre);// recibimos la variable nombre a la caja de texto txtNombre
 	    $("#txtOperacion").val(operacion);
+}
+    });
 }

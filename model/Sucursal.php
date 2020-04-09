@@ -56,7 +56,7 @@
 
 			global $conexion;
 
-			$sql = "DELETE FROM sucursal WHERE idsucursal = $idsucursal";
+			$sql = "UPDATE sucursal SET estado = 'D' where idsucursal = $idsucursal";
 
 			$query = $conexion->query($sql);
 
@@ -70,7 +70,7 @@
 
 			global $conexion;
 
-			$sql = "SELECT * FROM sucursal order by idsucursal desc";
+			$sql = "SELECT *  FROM sucursal where estado = 'A' OR estado = 'C' order by idsucursal desc";
 
 			$query = $conexion->query($sql);
 

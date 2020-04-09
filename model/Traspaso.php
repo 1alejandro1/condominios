@@ -115,18 +115,42 @@ class Traspaso
         $get_idrestaurar = "select * from detalle_traspaso where idtraspaso = $idtraspaso";
         $consultacantidadrestaurar = $conexion->query($get_idrestaurar);
 
+        $get_idsucursal = "select * from traspaso where idtraspaso = $idtraspaso";
+        $consultasucursal = $conexion->query($get_idsucursal);
+
+        $regidsucursal = $consultasucursal->fetch_object();
+
+
+        $get_ingreso = "select max(idingreso) as idingreso  from ingreso where idsucursal = $regidsucursal->idsucursaldestino";
+        $consultaingresar = $conexion->query($get_ingreso);
+
         while ($regidrestaurar = $consultacantidadrestaurar->fetch_object()) {
             $iddetalle_ingreso = $regidrestaurar->iddetalle_ingreso;
             $stock_traspaso = $regidrestaurar->stock_traspaso;
             $idingresonuevo = $regidrestaurar->idingresonuevo;
-            $sql_actualizar = "UPDATE detalle_ingreso set stock_actual = stock_actual + " . $stock_traspaso . " where iddetalle_ingreso = " . $iddetalle_ingreso . "";
+
+          $sql_actualizar = "UPDATE detalle_ingreso set stock_actual = stock_actual + " . $stock_traspaso . " where iddetalle_ingreso = " . $iddetalle_ingreso . "";
             $conexion->query($sql_actualizar);
+
+  /*
+          */
         }
 
+        $get_idsucursal = "select * from traspaso where idtraspaso = $idtraspaso";
+          $consultasucursal = $conexion->query($get_idsucursal);
 
+          $regidsucursal = $consultasucursal->fetch_object();
+
+          $get_ingreso = "select max(idingreso) as idingreso  from ingreso where idsucursal = $regidsucursal->idsucursaldestino";
+          $consultaingresar = $conexion->query($get_ingreso);
+
+          while ($reging = $consultaingresar->fetch_object()) {
+              $sql_actualizar = "UPDATE detalle_ingreso set stock_actual = stock_actual - " . $stock_traspaso . " where idingreso = " . $reging->idingreso . "";
+              $conexion->query($sql_actualizar);
+          }
         // Eliminar el Ingreso a la nueva Sucursal
         $sql = "DELETE FROM ingreso WHERE idingreso = $idingresonuevo";
-        $query = $conexion->query($sql);
+      $query = $conexion->query($sql);
 // Eliminar el Detalle del Ingreso
         $sql = "DELETE FROM detalle_ingreso WHERE idingreso = $idingresonuevo";
         $query = $conexion->query($sql);
@@ -134,7 +158,7 @@ class Traspaso
         $sql = "DELETE FROM traspaso WHERE idtraspaso = $idtraspaso";
         $query = $conexion->query($sql);
 // Eliminar el Detalle del Traspaso
-        $sql = "DELETE FROM detalle_traspaso WHERE idtraspaso = $idtraspaso";
+      $sql = "DELETE FROM detalle_traspaso WHERE idtraspaso = $idtraspaso";
         $query = $conexion->query($sql);
 
         return $query;
@@ -196,7 +220,7 @@ class Traspaso
         $sql = "SELECT traspaso.fecha, traspaso.motivo, detalle_traspaso.stock_traspaso ,
 			articulo.nombre, articulo.codigo_interno,
 			(select nombre from unidad_medida where unidad_medida.idunidad_medida=articulo.idunidad_medida) as marca,
-			articulo.numero 
+			articulo.numero
 			FROM traspaso
 			INNER join detalle_traspaso on traspaso.idtraspaso=detalle_traspaso.idtraspaso
 			INNER JOIN detalle_ingreso on detalle_ingreso.iddetalle_ingreso=detalle_traspaso.iddetalle_ingreso

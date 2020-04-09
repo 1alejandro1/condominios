@@ -25,7 +25,7 @@
 
 		public function Eliminar($idusuario){
 			global $conexion;
-			$sql = "DELETE from usuario WHERE idusuario = $idusuario";
+			$sql = "UPDATE usuario SET estado = 'C' WHERE idusuario = $idusuario";
 			$query = $conexion->query($sql);
 			return $query;
 		}
@@ -35,7 +35,7 @@
 			$sql = "select u.*, s.razon_social, concat(e.nombre, ' ', e.apellidos) as empleado
 	from usuario u inner join sucursal s on u.idsucursal = s.idsucursal
 	inner join empleado e on u.idempleado = e.idempleado
-	where u.estado <> 'C' ";
+	where u.estado <> 'C' order by idusuario desc ";
 			$query = $conexion->query($sql);
 			return $query;
 		}

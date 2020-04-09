@@ -87,13 +87,13 @@ class Ingreso
     public function Listar($idsucursal)
     {
         global $conexion;
-        $sql = "select i.*, d.idarticulo, p.nombre as proveedor 
-			from sistemai_animall.ingreso as i 
-			left join sistemai_animall.persona as p on i.idproveedor = p.idpersona
-			left join sistemai_animall.detalle_ingreso as d on i.idingreso = d.idingreso
-			where i.idingreso<>'1' 
+        $sql = "select i.*, d.idarticulo, p.nombre as proveedor
+			from ingreso as i
+			left join persona as p on i.idproveedor = p.idpersona
+			left join detalle_ingreso as d on i.idingreso = d.idingreso
+			where i.idingreso<>'1'
             and i.idsucursal = $idsucursal
-            order by i.idingreso desc 
+            order by i.idingreso desc
             limit 0,2999";
         $query = $conexion->query($sql);
         return $query;
@@ -112,28 +112,32 @@ class Ingreso
 
 
 
+        $objArticulo = new Articulo();
+
         $sqlIngreso = "select * from detalle_ingreso where idingreso = $idingreso";
         $queryIngreso = $conexion->query($sqlIngreso);
+
+
+        $sqlIngresoUltimo = "select max(idingreso) as ingreso from detalle_ingreso";
+        $queryIngresoUltimo = $conexion->query($sqlIngresoUltimo);
+        $reIngresoUtl = $queryIngresoUltimo->fetch_assoc();
+      //  var_dump(  $reIngresoUtl);
         while ($reg = $queryIngreso->fetch_assoc()) {
             // $resta = $reg["stock_ingreso"] - $reg["stock_actual"];
             /*$sql_cantidad = "update articulo set cantidad = cantidad - '" . $reg["stock_ingreso"] . "'
                                           where idarticulo = " . $reg['idarticulo'] . " ";
             $conexion->query($sql_cantidad);*/
-            $sql_detalle_cantidad = "update detalle_ingreso set stock_actual = stock_actual - '" . $reg["stock_ingreso"] . "'
-                                          where idarticulo = " . $reg['idarticulo'] . " 
-                                          and idingreso = (SELECT MAX(idingreso) FROM detalle_ingreso)";
-            $conexion->query($sql_detalle_cantidad);
+            $sql_detalle_cantidad = "UPDATE detalle_ingreso, ingreso
+             SET detalle_ingreso.stock_actual = detalle_ingreso.stock_actual - '" . $reg["stock_ingreso"] . "'
+             WHERE ingreso.idsucursal = $idsucursal
+             AND  detalle_ingreso.idingreso='" . $reIngresoUtl['ingreso']. "'
+             AND detalle_ingreso.idarticulo = '" . $reg["idarticulo"] . "'";
+             $conexion->query($sql_detalle_cantidad);
+              printf("%s",$conexion->error);
 
-            /*$query_Tipo = $objArticulo->GetStock($idsucursal, $reg['idarticulo']);
-            if ($regAr = $query_Tipo->fetch_object()) {
-                $stockActual = $regAr->stock_actual;
-            } else {
-                $stockActual = 0;
-            }
-
-            $suma = $stockActual - $reg["stock_ingreso"];
-            var_dump($suma);
-            die(0);*/
+            /*$sql_detalle_cantidad = "update detalle_ingreso set stock_actual = $resta
+                                          where idarticulo = " . $reg['idarticulo'] . "";
+            $conexion->query($sql_detalle_cantidad);*/
         }
 
         $sql = "UPDATE ingreso set estado = 'C'

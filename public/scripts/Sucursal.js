@@ -102,16 +102,18 @@ function ListadoSucursal(){
     };
 
 function eliminarSucursal(id){// funcion que llamamos del archivo ajax/CategoriaAjax.php?op=delete linea 53
-	bootbox.confirm("¿Esta Seguro de eliminar la Sucursal?", function(result){ // confirmamos con una pregunta si queremos eliminar
-		if(result){// si el result es true
-			$.post("./ajax/SucursalAjax.php?op=delete", {id : id}, function(e){// llamamos la url de eliminar por post. y mandamos por parametro el id
-                swal("Mensaje del Sistema", e, "success");
-				ListadoSucursal();
-
-            });
-		}
-
-	})
+	bootbox.confirm("¿Esta Seguro de eliminar la Sucursal? Esta acción afectará directamente a los productos asociados", function (result) {
+      // confirmamos con una pregunta si queremos eliminar
+      if (result) {
+        // si el result es true
+        $.post("./ajax/SucursalAjax.php?op=delete", { id: id }, function (e) {
+          // llamamos la url de eliminar por post. y mandamos por parametro el id
+          swal("Mensaje del Sistema", e, "success");
+          ListadoSucursal();
+        });
+      }
+    }
+  );
 }
 
 function cargarDataSucursal(id, razon_social,tipo_documento,num_documento,direccion,telefono,email,representante,logo,estado,numero_autorizacion,leyenda_facturas,llave_dosificacion,fecha_limite_emision){// funcion que llamamos del archivo ajax/CategoriaAjax.php linea 52

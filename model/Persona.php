@@ -46,20 +46,20 @@ return $query;
 
 		public function Eliminar($idpersona){
 			global $conexion;
-			$sql = "DELETE FROM persona WHERE idpersona = $idpersona";
+			$sql = "UPDATE persona SET estado='C' WHERE idpersona = $idpersona";
 			$query = $conexion->query($sql);
 			return $query;
 		}
 		public function Listar(){
 			global $conexion;
-			$sql = "SELECT * FROM persona order by idpersona desc";
+			$sql = "SELECT * FROM persona where estado = 'A' order by idpersona desc";
 			$query = $conexion->query($sql);
 			return $query;
 		}
 
 		public function ListarProveedor(){
 			global $conexion;
-			$sql = "SELECT * FROM persona where tipo_persona='Proveedor' order by idpersona desc";
+			$sql = "SELECT * FROM persona where tipo_persona='Proveedor' and estado = 'A' order by idpersona desc";
 			$query = $conexion->query($sql);
 			return $query;
 		}
@@ -80,7 +80,7 @@ return $query;
 //funcion de listar clientes 
 		public function ListarCliente(){
 			global $conexion;
-			$sql = "SELECT * FROM persona where tipo_persona='Cliente' order by idpersona desc";
+			$sql = "SELECT * FROM persona where tipo_persona='Cliente' and estado = 'A' order by idpersona desc";
 			$query = $conexion->query($sql);
 			return $query;
 		}

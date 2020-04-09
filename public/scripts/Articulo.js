@@ -149,7 +149,7 @@ function ListadoArticulos(){
 
 
 function eliminarArticulo(id){
-	bootbox.confirm("���Esta Seguro de eliminar la Articulo?", function(result){
+	bootbox.confirm("¿Esta Seguro de eliminar la Articulo?", function(result){
 		if(result){
 			$.post("./ajax/ArticuloAjax.php?op=delete", {id : id}, function(e){
 
