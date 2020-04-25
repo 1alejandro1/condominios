@@ -22,7 +22,7 @@
                 </div>
                 <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12 left">
                     <div class="form-group has-success">
-                        <label>Sucursal (*):</label>
+                        <label>Condominio (*):</label>
                         <select id="cboSucursal" required="" name="cboSucursal" class="form-control">
 
                         </select>
@@ -31,10 +31,10 @@
                 <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12 left">
                     <div class="form-group">
                         <input id="txtIdUsuario" type="hidden" maxlength="50" class="form-control" name="txtIdUsuario" required="" placeholder="" autofocus="" />
-                        <label>Trabajador (*):</label>
+                        <label>Usuario (*):</label>
                         <input id="txtIdEmpleado" type="hidden" class="form-control" name="txtIdEmpleado" required="" placeholder="" autofocus="" />
                         <div class="input-group has-success">
-                            <input id="txtEmpleado" type="text" class="form-control" name="txtEmpleado" required="" placeholder="Seleccione un Trabajador" autofocus="" disabled/>
+                            <input id="txtEmpleado" type="text" class="form-control" name="txtEmpleado" required="" placeholder="Seleccione un Usuario" autofocus="" disabled/>
                             <span class="input-group-btn" >
                                   <button type="button" class="btn btn-success" id="btnBuscarTrabajador"><i class='fa fa-search'></i>
                                                 Buscar
@@ -48,8 +48,10 @@
                         <label>Tipo de Usuario:</label>
                         <select id="cboTipoUsuario" name="cboTipoUsuario" class="form-control" required="" >
                             <option value="Administrador">Administrador</option>
-                            <option value="Empleado">Empleado</option>
-                            <option value="Cliente"></option>
+                            <option value="Concerje">Concerje</option>
+                            <option value="Coordinador">Coordinador</option>
+                            <option value="Casa">Casa</option>
+                            <option value="Comite Administracion">Comite Administracion</option>
                         </select>
                     </div>
                 </div>
@@ -63,20 +65,21 @@
                     <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 left">
                         <div class="form group">
                             <br>
-                              <input type="checkbox" id="chkMnuProductos" name="chkMnuProductos">Base Datos Productos <br>
-                              <input type="checkbox" id="chkMnuCompras" name="chkMnuCompras">Compras <br>
-                              <input type="checkbox" id="chkMnuVentas" name="chkMnuVentas">Ventas <br>
-                              <input type="checkbox" id="chkMnuMantenimiento" name="chkMnuMantenimiento">Mantenimiento<br>
+                            <input type="checkbox" id="chkMnuMantenimiento" name="chkMnuMantenimiento">Configuración<br>
+                              <input type="checkbox" id="chkMnuProductos" name="chkMnuProductos">Gestión Casas <br>
+                              <input type="checkbox" id="chkMnuCompras" name="chkMnuCompras">Portería <br>
+                              <input type="checkbox" id="chkMnuVentas" name="chkMnuVentas">Contabilidad <br>
+                             
 
                         </div>
                     </div>
                     <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 left">
                         <div class="form group">
                             <br>
-                              <input type="checkbox" id="chkMnuAlmacen" name="chkMnuAlmacen">Almacén<br>
-                              <input type="checkbox" id="chkMnuCaja" name="chkMnuCaja">Caja <br>
-                              <input type="checkbox" id="chkConsultaCompras" name="chkMnuConsultaCompras">Consulta de Compras <br>
-                              <input type="checkbox" id="chkConsultaVentas" name="chkMnuConsultaVentas">Consulta de Ventas <br>
+                             <!-- <input type="checkbox" id="chkMnuAlmacen" name="chkMnuAlmacen">Almacén<br>-->
+                              <input type="checkbox" id="chkMnuCaja" name="chkMnuCaja">Gastos Comunes <br>
+                              <input type="checkbox" id="chkConsultaCompras" name="chkMnuConsultaCompras">Consultas<br>
+                              <input type="checkbox" id="chkConsultaVentas" name="chkMnuConsultaVentas">Reportes <br>
 
                         </div>
                     </div>
@@ -108,8 +111,8 @@
                     <thead>
                         <tr>
                         	<th>#</th>
-                            <th>Sucursal</th>
-                            <th>Trabajador</th>
+                            <th>Condominio</th>
+                            <th>Usuario</th>
                             <th>Tipo de Usuario</th>
                             <th>Fecha de Registro</th>
                             <th>Opciones</th>
@@ -119,8 +122,8 @@
                     <tfoot>
                         <tr>
                         	<th>#</th>
-                            <th>Sucursal</th>
-                            <th>Trabajador</th>
+                            <th>Condominio</th>
+                            <th>Usuario</th>
                             <th>Tipo de Usuario</th>
                             <th>Fecha de Registro</th>
                             <th>Opciones</th>
@@ -144,7 +147,7 @@
     <div class="modal-content">
       <div class="modal-header">
         <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-        <h4 class="modal-title">Listado de Empleados</h4>
+        <h4 class="modal-title">Listado de Usuarios</h4>
       </div>
       <div class="modal-body">
       <div class="table-responsive">
