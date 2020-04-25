@@ -93,17 +93,17 @@
 			if(empty($_POST["txtIdPersona"])){
 //****************prueba**************
 				if($objCliente->Registrar($tipo_persona,$nombre,$tipo_documento,$num_documento,$direccion_departamento,$direccion_provincia,$direccion_distrito,$direccion_calle,$telefono,$email,$numero_cuenta,$estado)){
-					echo "Cliente registrado correctamente";
+					echo "Visita registrada correctamente";
 				}else{
-					echo "El Cliente no ha podido ser registrado.";
+					echo "La Visita no ha podido ser registrada.";
 				}
 			}else{
 
 				$idpersona = $_POST["txtIdPersona"];
 				if($objCliente->Modificar($idpersona,$tipo_persona,$nombre,$tipo_documento,$num_documento,$direccion_departamento,$direccion_provincia,$direccion_distrito,$direccion_calle,$telefono,$email,$numero_cuenta,$estado)){
-					echo "La informacion del Cliente ha sido actualizada";
+					echo "La informacion de la Visita ha sido actualizada";
 				}else{
-					echo "La informacion del Cliente no ha podido ser actualizada.";
+					echo "La informacion de la Visita no ha podido ser actualizada.";
 				}
 			}
 			break;

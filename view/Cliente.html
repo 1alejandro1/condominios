@@ -1,6 +1,6 @@
 <div class="box">
                 <div class="box-header with-border">
-                  <h3 class="box-title">Clientes</h3>
+                  <h3 class="box-title">Registro de Visitas</h3>
                   <div class="box-tools pull-right">
                     <button class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i></button>
 
@@ -28,7 +28,7 @@
                         <div class="col-lg-12 col-sm-12 col-md-12 col-xs-12">
                             <label>Los campos con (*) son olbigatorios</label>
                         </div>
-                        <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12">
+                        <div style="display: none"  class="col-lg-4 col-md-4 col-sm-6 col-xs-12">
                             <div class="form-group has-success">
                                 <input id="txtIdPersona" type="hidden" maxlength="50" class="form-control" name="txtIdPersona" placeholder="" autofocus="" />
                                 <label>Tipo Persona (*):</label>
@@ -37,10 +37,10 @@
                                 </select>
                             </div>
                         </div>
-                        <div class="col-lg-8 col-md-8 col-sm-6 col-xs-12">
+                        <div class="col-lg-12 col-md-8 col-sm-6 col-xs-12">
                             <div class="form-group has-success">
                                 <label>Nombre (*):</label>
-                                <input id="txtNombre" type="text" maxlength="100" name="txtNombre" required="" class="form-control" placeholder="Nombre / Razón Social" autofocus="" />
+                                <input id="txtNombre" type="text" maxlength="100" name="txtNombre" required="" class="form-control" placeholder="Nombre de la Visita" autofocus="" />
                             </div>
                         </div>
                     </div>
@@ -67,19 +67,19 @@
                 </div>
                 <div class="col-lg-12 left">
                     <div class="row">
-                        <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12">
+                        <div  style="display: none"  class="col-lg-4 col-md-4 col-sm-6 col-xs-12">
                             <div class="form-group has-success">
                                 <label>Departamento:</label>
                                 <input id="txtDireccion_Departamento" type="text" maxlength="45" name="txtDireccion_Departamento" placeholder="Departamento" class="form-control" autofocus="" />
                             </div>
                         </div>
-                        <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12">
+                        <div  style="display: none"  class="col-lg-4 col-md-4 col-sm-6 col-xs-12">
                             <div class="form-group has-success">
                                 <label>Provincia:</label>
                                 <input id="txtDireccion_Provincia" type="text" maxlength="45" name="txtDireccion_Provincia" class="form-control" placeholder="Provincia" autofocus="" />
                             </div>
                         </div>
-                        <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12">
+                        <div  style="display: none"  class="col-lg-4 col-md-4 col-sm-6 col-xs-12">
                             <div class="form-group has-success">
                                 <label>Distrito:</label>
                                 <input id="txtDireccion_Distrito" type="text" maxlength="45" name="txtDireccion_Distrito"  class="form-control" placeholder="Distrito" autofocus="" />
@@ -90,30 +90,31 @@
                 </div>
                 <div class="col-lg-12 left">
                     <div class="row">
-                        <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12">
-                            <div class="form-group has-success">
-                                <label>Calle:</label>
-                                <input id="txtDireccion_Calle" type="text" maxlength="70" name="txtDireccion_Calle" placeholder="Calle" class="form-control" autofocus="" />
-                            </div>
-                        </div>
-                        <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12">
-                            <div class="form-group has-success">
-                                <label>Teléfono:</label>
-                                <input id="txtTelefono" type="text" maxlength="20" name="txtTelefono" class="form-control" placeholder="Ingrese el teléfono" autofocus="" />
-                            </div>
-                        </div>
-                        <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12">
+                        <div class="col-lg-6 col-md-4 col-sm-6 col-xs-12">
                             <div class="form-group has-success">
                                 <label>Email:</label>
                                 <input id="txtEmail" type="text" maxlength="50" name="txtEmail"  class="form-control" placeholder="Ingrese el email" autofocus="" />
                             </div>
                         </div>
+                        <div   class="col-lg-6 col-md-4 col-sm-6 col-xs-12">
+                            <div class="form-group has-success">
+                                <label>Comentarios:</label>
+                                <input id="txtDireccion_Calle" type="text" maxlength="70" name="txtDireccion_Calle" placeholder="Comentarios" class="form-control" autofocus="" />
+                            </div>
+                        </div>
+                        <div  style="display: none"  class="col-lg-4 col-md-4 col-sm-6 col-xs-12">
+                            <div class="form-group has-success">
+                                <label>Teléfono:</label>
+                                <input id="txtTelefono" type="text" maxlength="20" name="txtTelefono" class="form-control" placeholder="Ingrese el teléfono" autofocus="" />
+                            </div>
+                        </div>
+                        
                     </div>
 
                 </div>
-                <div class="col-lg-12 left">
+                <div  style="display: none"  class="col-lg-12 left">
                     <div class="row">
-                        <div class="col-lg-8 col-md-8 col-sm-6 col-xs-12">
+                        <div  class="col-lg-8 col-md-8 col-sm-6 col-xs-12">
                             <div class="form-group has-success">
                                 <label>Cuenta Bancaria:</label>
                                 <input id="txtNumero_Cuenta" type="text" maxlength="32" name="txtNumero_Cuenta" class="form-control" autofocus="" />
@@ -160,9 +161,9 @@
                             <th>Cliente</th>
                             <th>Documento</th>
                             <th>Email</th>
-                            <th>Teléfono</th>
-                            <th>Direccion</th>
-                            <th>Opciones</th>
+                            <th style="display: none"  >Teléfono</th>
+                            <th style="display: none" >Direccion</th>
+                            <th style="width:7px" >Opciones</th>
                         </tr>
                     </thead>
 
@@ -172,9 +173,9 @@
                             <th>Cliente</th>
                             <th>Documento</th>
                             <th>Email</th>
-                            <th>Teléfono</th>
-                            <th>Direccion</th>
-                            <th>Opciones</th>
+                            <th style="display: none" >Teléfono</th>
+                            <th style="display: none" >Direccion</th>
+                            <th style="width:7px" >Opciones</th>
                         </tr>
                     </tfoot>
 
