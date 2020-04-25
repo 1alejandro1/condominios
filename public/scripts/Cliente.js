@@ -108,7 +108,7 @@ function ListadoCliente(){
     };
 
 function eliminarCliente(id){// funcion que llamamos del archivo ajax/CategoriaAjax.php?op=delete linea 53
-	bootbox.confirm("¿Esta Seguro de eliminar el cliente seleccionado?", function(result){ // confirmamos con una pregunta si queremos eliminar
+	bootbox.confirm("¿Esta Seguro de eliminar la visita seleccionada?", function(result){ // confirmamos con una pregunta si queremos eliminar
 		if(result){// si el result es true
 			$.post("./ajax/ClienteAjax.php?op=delete", {id : id}, function(e){// llamamos la url de eliminar por post. y mandamos por parametro el id
 
