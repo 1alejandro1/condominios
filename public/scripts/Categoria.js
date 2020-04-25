@@ -24,6 +24,7 @@ function init(){
 	
 	ListadoCategorias();// Ni bien carga la pagina que cargue el metodo
 	$("#VerForm").hide();// Ocultamos el formulario
+	$("#txtRutaImgProp").hide();
 	$("form#frmCategorias").submit(SaveOrUpdate);// Evento submit de jquery que llamamos al metodo SaveOrUpdate para poder registrar o modificar datos
 	
 	$("#btnNuevo").click(VerForm);// evento click de jquery que llamamos al metodo VerForm
@@ -80,7 +81,12 @@ function ListadoCategorias(){
         	"aoColumns":[
         	     	{   "mDataProp": "id"},
                     {   "mDataProp": "1"},
-                    {   "mDataProp": "2"}
+					{   "mDataProp": "2"},
+					{   "mDataProp": "3"},
+					{   "mDataProp": "4"},
+					{   "mDataProp": "5"},
+					{   "mDataProp": "6"},
+					{   "mDataProp": "7"}
 
         	],"ajax": 
 	        	{
@@ -114,11 +120,21 @@ function eliminarCategoria(id){// funcion que llamamos del archivo ajax/Categori
 	})
 }
 
-function cargarDataCategoria(id, nombre){// funcion que llamamos del archivo ajax/CategoriaAjax.php linea 52
+function cargarDataCategoria(id, nombre, tipo_documento, documento, telefono1, telefono2, email, asistencia, tipo, comentario, fotografia){// funcion que llamamos del archivo ajax/CategoriaAjax.php linea 52
 		$("#VerForm").show();// mostramos el formulario
 		$("#btnNuevo").hide();// ocultamos el boton nuevo
 		$("#VerListado").hide();
 
 		$("#txtIdCategoria").val(id);// recibimos la variable id a la caja de texto txtIdCategoria
-	    $("#txtNombre").val(nombre);// recibimos la variable nombre a la caja de texto txtNombre
+		$("#txtNombre").val(nombre);// recibimos la variable nombre a la caja de texto txtNombre
+		$("#cboTipo_Documento").val(tipo_documento);
+		$("#txtNum_Documento").val(documento);
+		$("#txtTelefono").val(telefono1);
+		$("#txtTelefono2").val(telefono2);
+		$("#txtEmail").val(email);
+		$("#cboAsistencia").val(asistencia);
+		$("#cboTipo").val(tipo);
+		$("#txtComentario").val(comentario);
+		$("#txtRutaImgProp").val(fotografia);
+		$("#txtRutaImgProp").show();
 }

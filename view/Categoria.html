@@ -1,7 +1,7 @@
 <div class="panel panel-default">
             <div class="panel-heading">
                 <div class="box-header with-border">
-                  <h3 class="box-title" >Casas</h3>
+                  <h3 class="box-title" >Propietarios</h3>
                   <div class="box-tools pull-right">
                     <button class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i></button>
 
@@ -22,13 +22,125 @@
                 <div class="col-lg-12 col-sm-12 col-md-12 col-xs-12">
                     <label>Los campos con (*) son olbigatorios</label>
                 </div>
-                <div class="col-lg-8 left">
-                    <div class="form-group has-success">
-                        <input id="txtIdCategoria" type="hidden" maxlength="50" class="form-control" name="txtIdCategoria" required="" placeholder="" autofocus="" />
-                        <label>Número Casa (*):</label>
-                        <input id="txtNombre" type="text" maxlength="50" class="form-control" name="txtNombre" required="" placeholder="Ingrese la Categoria" autofocus="" />
+                
+                <div class="col-lg-12 left">
+                    <div class="row">
+                     <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                        <div class="form-group has-success">
+                            <input id="txtIdCategoria" type="hidden" maxlength="50" class="form-control" name="txtIdCategoria" required="" placeholder="" autofocus="" />
+                            <label>Nombre (*):</label>
+                            <input id="txtNombre" type="text" maxlength="500" class="form-control" name="txtNombre" required="" placeholder="Ingrese la Categoria" autofocus="" />
+                        </div>
+                     </div>
+                     <div class="col-lg-2 col-md-2 col-sm-2 col-xs-12">
+                        <div class="form-group has-success">
+                            <label>Tipo Documento (*):</label>
+                            <select required="" id="cboTipo_Documento" name="cboTipo_Documento" class="form-control">
+
+                            </select>
+                        </div>
                     </div>
+                        <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12">
+                            <div class="form-group has-success">
+                                <label>Documento (*):</label>
+                                <input id="txtNum_Documento" type="text" maxlength="20" name="txtNum_Documento" required="" class="form-control" placeholder="Número de documento" autofocus="" />
+                            </div>
+                        </div>
+                    </div>
+
                 </div>
+                <div class="col-lg-12 left">
+                    <div class="row">
+                     
+                        <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12">
+                            <div class="form-group has-success">
+                                <label>Teléfono 1:</label>
+                                <input id="txtTelefono" type="text" maxlength="20" name="txtTelefono" class="form-control" placeholder="Ingrese el teléfono" autofocus="" />
+                            </div>
+                        </div>
+                        <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12">
+                            <div class="form-group has-success">
+                                <label>Teléfono 2:</label>
+                                <input id="txtTelefono2" type="text" maxlength="20" name="txtTelefono2" class="form-control" placeholder="Ingrese el teléfono" autofocus="" />
+                            </div>
+                        </div>
+                        <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12">
+                            <div class="form-group has-success">
+                                <label>Email:</label>
+                                <input id="txtEmail" type="text" maxlength="100" name="txtEmail"  class="form-control" placeholder="Ingrese el email" autofocus="" />
+                            </div>
+                        </div>
+                      
+                    </div>
+
+                </div>
+
+                <div class="col-lg-12 left">
+                    <div class="row">
+
+                        <div class="col-lg-2 col-md-2 col-sm-2 col-xs-12">
+                            <div class="form-group has-success">
+                                <label>¿Requiere Asistencia?</label>
+                                <div class="form-group  has-success">
+
+                                    <select  name="cboAsistencia" id="cboAsistencia" class="form-control">
+                                       <option  value = "Si" selected >Si</option>
+                                       <option selected="true" value = "No"  >No</option>                                                                        
+
+                       </select>
+                   </div>
+
+                                   </div>
+                        </div>
+
+                        <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12">
+                            <div class="form-group has-success">
+                                <label>Tipo Residente:</label>
+                                <div class="form-group  has-success">
+
+                                    <select  name="cboTipo" id="cboTipo" class="form-control">
+                                       <option selected="true" value = "" selected >Selecciona el Tipo de Residente</option>
+                                       <option value = "Año Corrido"  >Año Corrido</option>
+                                       <option value = "Corredor de Propiedades"  >Corredor de Propiedades</option>
+                                       <option value = "Mascota"  >Mascota</option>
+                                       <option value = "Propietario Residente"  >Propietario Residente</option>
+                                       <option value = "Secretaria Oficina"  >Secretaria Oficina</option>
+                                       <option value = "Contrato por un Año"  >Contrato por un Año</option>
+                                       <option value = "Arrendatario(a)"  >Arrendatario(a)</option>
+                                       <option value = "Marzo a Diciembre"  >Marzo a Diciembre</option>
+                                       <option value = "Marzo a Diciembre"  >Reside Habitualmente</option>
+                                       <option value = "Residencia de Descanso"  >Residencia de Descanso</option>
+                                       <option value = "Permanente"  >Permanente</option>
+                                       <option value = "Propietario no Residente"  >Propietario no Residente</option>
+                                       <option value = "Febrero a Diciembre"  >Febrero a Diciembre</option>
+                                       <option value = "Comite"  >Comite</option>                                      
+
+                       </select>
+                   </div>
+
+                                   </div>
+                        </div>
+                      
+                        <div class="col-lg-5 col-md-12 col-sm-12 col-xs-12 left">                            
+                            <div class="form-group  has-success">
+                                <label >Comentario:</label>        
+                                <textarea  style="height:70px;" class="form-control"name="txtComentario" id = "txtComentario"  placeholder="Ingrese algún Comentario (opcional)"></textarea>
+                            </div>
+                        </div>
+                     
+                            <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 left">
+                                <div class="form-group  has-success">
+                                <label for="inputInscripcion">Foto:</label>
+                                <p>Solo se puede adjuntar un archivo o una imagen.</p>
+                                    <input id="imagenProp" type="file" class="form-control" name="imagenProp" autofocus="" />
+                                    <input id="txtRutaImgProp" type="text" class="form-control" name="txtRutaImgProp" autofocus="" />
+                                </div>
+                            </div>
+                      
+                    </div>
+
+                </div>
+
                 <div class="col-lg-12 col-sm-12 col-md-12 col-xs-12 left">
                     <h5></h5>
                     <button class="btn btn-success" type="submit"><i class="fa fa-floppy-o"></i> Registrar</button>
@@ -52,7 +164,12 @@
                     <thead>
                         <tr>
                         	<th>#</th>
-                            <th>Categoria</th>
+                            <th>Nombre</th>
+                            <th>Documento</th>
+                            <th>Tipo Propietario</th>
+                            <th>Teléfono</th>
+                            <th>Email</th>
+                            <th>Asistencia</th>
                             <th>Opciones</th>
                         </tr>
                     </thead>
@@ -60,7 +177,12 @@
                     <tfoot>
                         <tr>
                         	<th>#</th>
-                            <th>Categoria</th>
+                            <th>Nombre</th>
+                            <th>Documento</th>
+                            <th>Tipo Propietario</th>
+                            <th>Teléfono</th>
+                            <th>Email</th>
+                            <th>Asistencia</th>
                             <th>Opciones</th>
                         </tr>
                     </tfoot>
@@ -80,3 +202,4 @@
 
     //$("#txtNombre").numeric();
 </script>
+<script src="./libreria-barcode.js"></script>
