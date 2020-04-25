@@ -26,7 +26,7 @@
 			$email = isset($_POST["txtEmail"])?$_POST["txtEmail"]:"";
 			$numero_cuenta = isset($_POST["txtNumero_Cuenta"])?$_POST["txtNumero_Cuenta"]:"";
 			$estado = $_POST["txtEstado"];
-			
+
 
 
 					$query_tipo_Documento = $objCliente->cliente_existe($nombre,$num_documento);
@@ -129,7 +129,6 @@
      				"id"=>$i,
 					"1"=>$reg->nombre,
 					"2"=>$reg->tipo_documento.'&nbsp;'.$reg->num_documento,
-					
 					"3"=>$reg->direccion_departamento,
 					"4"=>'<button class="btn btn-warning" data-toggle="tooltip" title="Editar" onclick="cargarDataCliente('.$reg->idpersona.',\''.$reg->tipo_persona.'\',\''.$reg->nombre.'\',\''.$reg->tipo_documento.'\',\''.$reg->num_documento.'\',\''.$reg->direccion_departamento.'\',\''.$reg->direccion_provincia.'\',\''.$reg->direccion_distrito.'\',\''.$reg->direccion_calle.'\',\''.$reg->telefono.'\',\''.$reg->email.'\',\''.$reg->numero_cuenta.'\',\''.$reg->estado.'\')"><i class="fa fa-pencil"></i> </button>&nbsp;'.
 					'<button class="btn btn-danger" data-toggle="tooltip" title="Eliminar" onclick="eliminarCliente('.$reg->idpersona.')"><i class="fa fa-trash"></i> </button>');

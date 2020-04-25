@@ -65,8 +65,8 @@ function ListadoUnidad_Medida(){
             "aoColumns":[
                     {   "mDataProp": "0"},
                     {   "mDataProp": "1"},
-                    {   "mDataProp": "2"},
-                    {   "mDataProp": "3"}
+                    {   "mDataProp": "2"}
+                    
 
             ],"ajax": 
                 {

@@ -89,8 +89,8 @@ function ListadoCliente(){
                     {   "mDataProp": "1"},
                     {   "mDataProp": "2"},
                     {   "mDataProp": "3"},
-                    {   "mDataProp": "4"},
-         
+                    {   "mDataProp": "4"}
+
 
         	],"ajax":
 	        	{

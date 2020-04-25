@@ -51,8 +51,8 @@
      			$data[] = array(
      				"0"=>$i,
                     "1"=>$reg->nombre,
-                    "2"=>$reg->prefijo,
-                    "3"=>'<button class="btn btn-warning" data-toggle="tooltip" title="Editar" onclick="cargarDataUnidad_Medida('.$reg->idunidad_medida.',\''.$reg->nombre.'\',\''.$reg->prefijo.'\')"><i class="fa fa-pencil"></i> </button>&nbsp;'.
+                    
+                    "2"=>'<button class="btn btn-warning" data-toggle="tooltip" title="Editar" onclick="cargarDataUnidad_Medida('.$reg->idunidad_medida.',\''.$reg->nombre.'\',\''.$reg->prefijo.'\')"><i class="fa fa-pencil"></i> </button>&nbsp;'.
                     '<button class="btn btn-danger" data-toggle="tooltip" title="Eliminar" id="btnEliminarUM" onclick="eliminarUnidad_Medida('.$reg->idunidad_medida.')"><i class="fa fa-trash"></i> </button>');
                 $i++;
             }
