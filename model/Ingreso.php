@@ -87,10 +87,9 @@ class Ingreso
     public function Listar($idsucursal)
     {
         global $conexion;
-        $sql = "select i.*, d.idarticulo, p.nombre as proveedor
+        $sql = "select i.*, p.nombre as proveedor
 			from ingreso as i
-			left join persona as p on i.idproveedor = p.idpersona
-			left join detalle_ingreso as d on i.idingreso = d.idingreso
+			left join persona as p on i.idproveedor = p.idpersona			
 			where i.idingreso<>'1'
             and i.idsucursal = $idsucursal
             order by i.idingreso desc
@@ -99,23 +98,22 @@ class Ingreso
         return $query;
     }
 
-    public function CambiarEstado($idingreso, $idArticulo)
+    public function CambiarEstado($idingreso)
     {
         global $conexion;
-
         $idsucursal = $_SESSION["idsucursal"];
         require_once "../model/Articulo.php";
-
         $objArticulo = new Articulo();
-
-
-
-
-
-        $objArticulo = new Articulo();
-
         $sqlIngreso = "select * from detalle_ingreso where idingreso = $idingreso";
         $queryIngreso = $conexion->query($sqlIngreso);
+
+        
+        //******************* */
+        while ($reg = $queryIngreso->fetch_object()) {
+                $idVenta = $reg->idventa;
+            }
+
+        
 
 
         $sqlIngresoUltimo = "select max(idingreso) as ingreso from detalle_ingreso";

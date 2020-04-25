@@ -473,7 +473,7 @@ function cargarDataTraspaso(idtraspaso, idsucursalorigen, idsucursaldestino, fec
                             detalle : detalle//son los productos
                         };
                         $.post("./ajax/PedidoAjax.php?op=SaveTicket", data, function(r) {
-                            location.href ="../petshop/Pedido.php";
+                            location.href = "../condominios/Pedido.php";
                             var es = String(r);
                             window.open('./Reportes/exVenta.php?id='+es, 'target', ' toolbar=0 , location=1 , status=0 , menubar=1 , scrollbars=0');
                         });
@@ -536,7 +536,7 @@ function cargarDataTraspaso(idtraspaso, idsucursalorigen, idsucursaldestino, fec
                     };
 
                     $.post("./ajax/PedidoAjax.php?op=SaveFactura", data, function(r) {
-                        location.href ="../petshop/Pedido.php";
+                        location.href = "../condominios/Pedido.php";
                         var es = String(r);
                         window.open('./Reportes/exVenta.php?id='+es, 'target', ' toolbar=0 , location=1 , status=0 , menubar=1 , scrollbars=0 , resizable=1 ,left=600pt,top=90pt, width=380px,height=880px');
                     });

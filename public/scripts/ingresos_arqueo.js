@@ -233,7 +233,7 @@ function ConsultarDetallesDocSuc() {
 
                     swal("Mensaje del Sistema", e, "success");
 
-                    location.href ="../petshop/ingresos_arqueo.php";
+                    location.href = "../condominios/ingresos_arqueo.php";
 
 
                 });

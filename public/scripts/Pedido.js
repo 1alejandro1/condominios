@@ -225,7 +225,7 @@ if ($("#tipo_venta").val() == "contado") {
 //    Limpiar();
             //  swal("Mensaje del Sistema", r, "success");
 
-            location.href ="../petshop/Pedido.php";
+            location.href = "../condominios/Pedido.php";
 
                               //
                               var es = String(r);
@@ -321,7 +321,7 @@ case "FACTURA":
 //$("#tblPedidos").show();
 //$("#VerListado").show();
 
-location.href ="../petshop/Pedido.php";
+location.href = "../condominios/Pedido.php";
 
                   //
                   var es = String(r);

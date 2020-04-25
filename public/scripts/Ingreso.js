@@ -261,7 +261,10 @@ switch ($("#cboTipoComprobanteIng").val()) {
               };
 
               $.post("./ajax/IngresoAjax.php?op=Save", data, function(r){
-                  swal("Mensaje del Sistema", r, "success");
+                  
+                 location.href = "../condominios/Ingreso.php";
+
+                  
                   //alert(r);
                   Limpiar();
                   OcultarForm();
@@ -295,6 +298,13 @@ switch ($("#cboTipoComprobanteIng").val()) {
               };
 
               $.post("./ajax/IngresoAjax.php?op=Save", data, function(r){
+                 
+                location.href = "../condominios/Ingreso.php";
+                   
+                   //alert(r);
+                   Limpiar();
+                   OcultarForm();
+                   ListadoIngresos();
 
                   //alert(r);
 
@@ -344,7 +354,9 @@ if ($("#txtIdProveedor").val() != "" ) {
         };
 
         $.post("./ajax/IngresoAjax.php?op=Save", data, function(r){
-            swal("Mensaje del Sistema", r, "success");
+            
+            location.href = "../condominios/Ingreso.php";
+            
             //alert(r);
               Limpiar();
               OcultarForm();
@@ -376,6 +388,13 @@ else {
       };
 
       $.post("./ajax/IngresoAjax.php?op=Save", data, function(r){
+        
+        location.href = "../condominios/Ingreso.php";
+           
+           //alert(r);
+           Limpiar();
+           OcultarForm();
+           ListadoIngresos();
 
           //alert(r);
 
@@ -416,7 +435,9 @@ else {
           };
 
           $.post("./ajax/IngresoAjax.php?op=Save", data, function(r){
-              swal("Mensaje del Sistema", r, "success");
+             
+            location.href = "../condominios/Ingreso.php";
+              
               //alert(r);
               Limpiar();
               OcultarForm();
@@ -448,6 +469,12 @@ else {
     };
 
     $.post("./ajax/IngresoAjax.php?op=Save", data, function(r){
+        location.href = "../condominios/Ingreso.php";
+         
+         //alert(r);
+         Limpiar();
+         OcultarForm();
+         ListadoIngresos();
 
         //alert(r);
 
@@ -466,7 +493,7 @@ else {
         break;
 
 }
-
+Limpiar();
 	}
 
     function Limpiar(){
@@ -912,10 +939,10 @@ function ListadoIngresos(){
 
     }
 
-    function cancelarIngreso(idIngreso, idArticulo){
+    function cancelarIngreso(idIngreso){
         bootbox.confirm("¿Esta Seguro de Anular el ingreso?", function(result){
             if(result){
-                $.post("./ajax/IngresoAjax.php?op=CambiarEstado", {idIngreso : idIngreso, idArticulo: idArticulo}, function(e){
+                $.post("./ajax/IngresoAjax.php?op=CambiarEstado", {idIngreso : idIngreso}, function(e){
 
                     swal("Mensaje del Sistema", e, "success");
                     ListadoIngresos();

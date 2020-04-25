@@ -101,7 +101,7 @@ function init() {
         };
 
         $.post("./ajax/VentaAjax.php?op=SaveOrUpdate", data, function (r) {// llamamos la url por post. function(r). r-> llamada del callback
-            location.href = "../petshop/Venta.php";
+            location.href = "../condominios/Venta.php";
 
             //
             var es = String(r);

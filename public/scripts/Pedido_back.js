@@ -215,18 +215,23 @@ function init() {
 
                         };
                         $.post("./ajax/PedidoAjax.php?op=SaveTicket", data, function (r) {
-//        location.href ="../solventas/Pedido.php";
-//    Limpiar();
-                            //  swal("Mensaje del Sistema", r, "success");
+                                                                                           //        location.href ="../solventas/Pedido.php";
+                                                                                           //    Limpiar();
+                                                                                           //  swal("Mensaje del Sistema", r, "success");
 
-                            //location.href = "../petshop/Pedido.php";
+                                                                                           //location.href = "../condominios/Pedido.php";
 
-                            //
-                            var es = String(r);
-                            window.open('./Reportes/exVenta.php?id=' + es, 'target', ' toolbar=0 , location=1 , status=0 , menubar=1 , scrollbars=0');
-
-
-                        });
+                                                                                           //
+                                                                                           var es = String(
+                                                                                             r
+                                                                                           );
+                                                                                           window.open(
+                                                                                             "./Reportes/exVenta.php?id=" +
+                                                                                               es,
+                                                                                             "target",
+                                                                                             " toolbar=0 , location=1 , status=0 , menubar=1 , scrollbars=0"
+                                                                                           );
+                                                                                         });
                     }//fin // si existe productos
                     else {
                         bootbox.alert("Ingrese Articulos");
@@ -311,7 +316,7 @@ function init() {
 //$("#tblPedidos").show();
 //$("#VerListado").show();
 
-                        location.href = "../petshop/Pedido.php";
+                        location.href = "../condominios/Pedido.php";
 
                         //
                         var es = String(r);

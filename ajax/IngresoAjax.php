@@ -47,8 +47,8 @@ switch ($_GET["op"]) {
         $obj= new Ingreso();
 
         $idIngreso = $_POST["idIngreso"];
-        $idArticulo = $_POST["idArticulo"];
-        $hosp = $obj->CambiarEstado($idIngreso, $idArticulo);
+       
+        $hosp = $obj->CambiarEstado($idIngreso);
                 if ($hosp) {
                     echo "Ingreso Anulado";
                 } else {
@@ -80,7 +80,7 @@ switch ($_GET["op"]) {
 
                     "6"=>($reg->estado=="A")?'<span class="badge bg-green">ACEPTADO</span>':'<span class="badge bg-red">CANCELADO</span>',
                     "7"=>($reg->estado=="A")?'<button class="btn btn-success" data-toggle="tooltip" title="Ver Detalle" onclick="cargarDataIngreso('.$reg->idingreso.',\''.$reg->serie_comprobante.'\',\''.$reg->num_comprobante.'\',\''.$reg->impuesto.'\',\''.$reg->total.'\',\''.$reg->idingreso.'\',\''.$reg->proveedor.'\',\''.$reg->tipo_comprobante.'\',\''.$reg->tipo_ingreso.'\',\''.$reg->total_descuento.'\',\''.$reg->serie_comprobante.'\',\''.$reg->codigo_control.'\',\''.$reg->numero_autorizacion.'\')" ><i class="fa fa-eye"></i> </button>&nbsp'.
-                    '<button class="btn btn-danger" data-toggle="tooltip" title="Anular Ingreso" onclick="cancelarIngreso('.$reg->idingreso.', '.$reg->idarticulo.')" ><i class="fa fa-times-circle"></i> </button>&nbsp'.
+                    '<button class="btn btn-danger" data-toggle="tooltip" title="Anular Ingreso" onclick="cancelarIngreso('.$reg->idingreso.')" ><i class="fa fa-times-circle"></i> </button>&nbsp'.
                     '<a href="./Reportes/exIngreso.php?id='.$reg->idingreso.'" class="btn btn-primary" data-toggle="tooltip" title="Imprimir" target="blanck" ><i class="fa fa-file-text"></i> </a>':'<button class="btn btn-success" data-toggle="tooltip" title="Ver Detalle" onclick="cargarDataIngreso('.$reg->idingreso.',\''.$reg->serie_comprobante.'\',\''.$reg->num_comprobante.'\',\''.$reg->impuesto.'\',\''.$reg->total.'\',\''.$reg->idingreso.'\',\''.$reg->proveedor.'\',\''.$reg->tipo_comprobante.'\')" ><i class="fa fa-eye"></i> </button>&nbsp'.
                     '<a href="./Reportes/exIngreso.php?id='.$reg->idingreso.'" class="btn btn-primary" data-toggle="tooltip" title="Imprimir" target="blanck" ><i class="fa fa-file-text"></i> </a>');
                 $i++;
