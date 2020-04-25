@@ -39,12 +39,12 @@ while ($reg_Global= $query_Global->fetch_object()) {
               <div class="small-box bg-aqua">
                 <div class="inner">
                   <h4 style="font-size:17px;"><strong><?php echo $moneda.$totalingreso;?></strong></h4>
-                  <p>Compras</p>
+                  <p>Egresos del Mes </p>
                 </div>
                 <div class="icon">
                   <i class="ion ion-bag"></i>
                 </div>
-                <a href="ComprasDetalladas.php" class="small-box-footer">Compras <i class="fa fa-arrow-circle-right"></i></a>
+                <a href="ComprasDetalladas.php" class="small-box-footer">Egresos<i class="fa fa-arrow-circle-right"></i></a>
               </div>
             </div>
 
@@ -53,16 +53,16 @@ while ($reg_Global= $query_Global->fetch_object()) {
               <div class="small-box bg-green">
                 <div class="inner">
                   <h4 style="font-size:17px;"><strong><?php echo $moneda.$totalcontado;?></strong></h4>
-                  <p>Ventas Contado</p>
+                  <p>Ingresos del Mes</p>
                 </div>
                 <div class="icon">
                   <i class="ion ion-stats-bars"></i>
                 </div>
-                <a href="VentasDetalladas.php" class="small-box-footer">Ventas <i class="fa fa-arrow-circle-right"></i></a>
+                <a href="VentasDetalladas.php" class="small-box-footer">Ingresos <i class="fa fa-arrow-circle-right"></i></a>
               </div>
             </div><!-- ./col -->
-            <div class="col-lg-2 col-xs-5">
-              <!-- small box -->
+            <!--<div class="col-lg-2 col-xs-5">
+              
               <div class="small-box bg-yellow">
                 <div class="inner">
                   <h4 style="font-size:17px;"><strong><?php echo $moneda.$totalcredito;?></strong></h4>
@@ -91,7 +91,7 @@ while ($reg_Global= $query_Global->fetch_object()) {
             <div class="col-lg-2 col-xs-5">
               <!-- clock widget start -->
 
-            <script type="text/javascript"> var css_file=document.createElement("link"); css_file.setAttribute("rel","stylesheet"); css_file.setAttribute("type","text/css"); css_file.setAttribute("href","public/css/reloj.css"); document.getElementsByTagName("head")[0].appendChild(css_file); </script> <div id="tw_1_1805039612"><div style="width:170px; height:100px; margin: 0 auto;"><a href="https://hotelmix.es/time/la-paz-13481">La Paz</a><br/></div></div> <script type="text/javascript"> function setWidgetData_1805039612(data){ if(typeof(data) != 'undefined' && data.results.length > 0) { for(var i = 0; i < data.results.length; ++i) { var objMainBlock = ''; var params = data.results[i]; objMainBlock = document.getElementById('tw_'+params.widget_type+'_'+params.widget_id); if(objMainBlock !== null) objMainBlock.innerHTML = params.html_code; } } } var clock_timer_1805039612 = -1; </script> <script type="text/javascript" charset="UTF-8" src="https://widgets.booked.net/time/info?ver=2&domid=582&type=1&id=1805039612&scode=124&city_id=13481&wlangid=4&mode=1&details=0&background=f8b712&color=ffffff&add_background=ffffff&add_color=2071c9&head_color=ffffff&border=0&transparent=0"></script>
+            <script type="text/javascript"> var css_file=document.createElement("link"); css_file.setAttribute("rel","stylesheet"); css_file.setAttribute("type","text/css"); css_file.setAttribute("href","public/css/reloj.css"); document.getElementsByTagName("head")[0].appendChild(css_file); </script> <div id="tw_1_1805039612"><div style="width:170px; height:100px; margin: 0 auto;"><a href="https://hotelmix.es/time/la-paz-13481">Santa Cruz</a><br/></div></div> <script type="text/javascript"> function setWidgetData_1805039612(data){ if(typeof(data) != 'undefined' && data.results.length > 0) { for(var i = 0; i < data.results.length; ++i) { var objMainBlock = ''; var params = data.results[i]; objMainBlock = document.getElementById('tw_'+params.widget_type+'_'+params.widget_id); if(objMainBlock !== null) objMainBlock.innerHTML = params.html_code; } } } var clock_timer_1805039612 = -1; </script> <script type="text/javascript" charset="UTF-8" src="https://widgets.booked.net/time/info?ver=2&domid=582&type=1&id=1805039612&scode=124&city_id=13481&wlangid=4&mode=1&details=0&background=f8b712&color=ffffff&add_background=ffffff&add_color=2071c9&head_color=ffffff&border=0&transparent=0"></script>
             <!-- clock widget end -->
 
               </div>
@@ -101,7 +101,7 @@ while ($reg_Global= $query_Global->fetch_object()) {
               <!-- AREA CHART -->
               <div class="box box-primary">
                 <div class="box-header with-border">
-                  <h3 class="box-title" style="font-size:17px;">Compras - Meses</h3>
+                  <h3 class="box-title" style="font-size:17px;">Egresos - Meses</h3>
                   <div class="box-tools pull-right">
                     <button class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i></button>
                     <button class="btn btn-box-tool" data-widget="remove"><i class="fa fa-times"></i></button>
@@ -133,7 +133,7 @@ while ($reg_Global= $query_Global->fetch_object()) {
               <!-- LINE CHART -->
               <div class="box box-info">
                 <div class="box-header with-border">
-                  <h3 class="box-title" style="font-size:17px;">Ventas - Meses</h3>
+                  <h3 class="box-title" style="font-size:17px;">Ingresos - Meses</h3>
                   <div class="box-tools pull-right">
                     <button class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i></button>
                     <button class="btn btn-box-tool" data-widget="remove"><i class="fa fa-times"></i></button>
@@ -149,7 +149,7 @@ while ($reg_Global= $query_Global->fetch_object()) {
               <!-- BAR CHART -->
               <div class="box box-success">
                 <div class="box-header with-border">
-                  <h3 class="box-title" style="font-size:17px;">Ventas - días</h3>
+                  <h3 class="box-title" style="font-size:17px;">Ingresos - días</h3>
                   <div class="box-tools pull-right">
                     <button class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i></button>
                     <button class="btn btn-box-tool" data-widget="remove"><i class="fa fa-times"></i></button>
@@ -161,10 +161,10 @@ while ($reg_Global= $query_Global->fetch_object()) {
                   </div>
                 </div><!-- /.box-body -->
               </div><!-- /.box -->
-                    La Paz - Bolivia
+              Santa Cruz - Bolivia
               <!-- www.tutiempo.net - Ancho:556px - Alto:149px -->
-              <div id="TT_JyJE1k1kkAh9f1GAKAujzzjDDsuALffFbdEdkZCIaED5GIGoG">El tiempo - Tutiempo.net</div>
-              <script type="text/javascript" src="https://www.tutiempo.net/s-widget/l_JyJE1k1kkAh9f1GAKAujzzjDDsuALffFbdEdkZCIaED5GIGoG"></script>
+              <div id="TT_yiNkkkkEEpMBpTGKjAzjjjDjjWuK1pQ2rYkt1sC5KkDImomoG">El tiempo - Tutiempo.net</div>
+              <script type="text/javascript" src="https://www.tutiempo.net/s-widget/l_yiNkkkkEEpMBpTGKjAzjjjDjjWuK1pQ2rYkt1sC5KkDImomoG"></script>
               <BR/>
               <iframe src="https://calendar.google.com/calendar/b/2/embed?title=Calendario%20Bolivia&amp;showTitle=0&amp;height=600&amp;wkst=2&amp;hl=es&amp;bgcolor=%23ccccff&amp;src=es.bo%23holiday%40group.v.calendar.google.com&amp;color=%2329527A&amp;ctz=America%2FLa_Paz" style="border-width:0" width="600" height="400" frameborder="0" scrolling="no"></iframe>
 
