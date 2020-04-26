@@ -8,8 +8,10 @@
 
 	switch ($_GET["op"]) {
 
-		case 'SaveOrUpdate':			
-
+		case 'SaveOrUpdate':
+						
+			$imagen = $_FILES["imagenProp"]["tmp_name"];
+			$ruta = $_FILES["imagenProp"]["name"];
 			$nombre = $_POST["txtNombre"]; // Llamamos al input txtNombre
 			$tipo_documento = $_POST["cboTipo_Documento"];
 			$documento = $_POST["txtNum_Documento"];
@@ -18,9 +20,7 @@
 			$email = $_POST["txtEmail"];
 			$asistencia = $_POST["cboAsistencia"];
 			$tipo = $_POST["cboTipo"];
-			$comentario = $_POST["txtComentario"];
-			$imagen = $_FILES["imagenProp"]["tmp_name"];
-			$ruta = $_FILES["imagenProp"]["name"];
+			$comentario = $_POST["txtComentario"];			
 
 			
 			if(move_uploaded_file($imagen, "../Files/Propietario/".$ruta)){

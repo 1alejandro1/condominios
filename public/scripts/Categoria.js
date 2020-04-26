@@ -50,7 +50,13 @@ function init(){
 	function Limpiar(){
 		// Limpiamos las cajas de texto
 		$("#txtIdCategoria").val("");
-	    $("#txtNombre").val("");
+		$("#txtNombre").val("");		
+		$("#txtNum_Documento").val("");
+		$("#txtTelefono").val("");
+		$("#txtTelefono2").val("");		
+		$("#txtEmail").val("");		
+		$("#txtComentario").val("");
+		
 	}
 
 	function VerForm(){
