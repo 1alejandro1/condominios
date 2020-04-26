@@ -1,7 +1,5 @@
 $(document).on("ready", init);// Inciamos el jquery
 
-var objC = new init();
-
 function init(){
 
 
@@ -35,16 +33,33 @@ function init(){
     //});
 
 	function SaveOrUpdate(e){
-		e.preventDefault();// para que no se recargue la pagina
-        $.post("./ajax/CategoriaAjax.php?op=SaveOrUpdate", $(this).serialize(), function(r){// llamamos la url por post. function(r). r-> llamada del callback
-            
-            Limpiar();
-            //$.toaster({ priority : 'success', title : 'Mensaje', message : r});
-            swal("Mensaje del Sistema", r, "success");
-			  ListadoCategorias();
-			  OcultarForm();
-	        
-        });
+		e.preventDefault();
+
+        var formData = new FormData($("#frmCategorias")[0]);
+
+        $.ajax({
+
+                url: "./ajax/CategoriaAjax.php?op=SaveOrUpdate",
+
+                type: "POST",
+
+               data: formData,
+
+                contentType: false,
+
+                processData: false,
+
+                success: function(datos)
+
+                {
+
+                    swal("Mensaje del Sistema", datos, "success");
+                    ListadoCategorias();
+                    OcultarForm();
+                    Limpiar();
+                }
+
+            });
 	};
 
 	function Limpiar(){
