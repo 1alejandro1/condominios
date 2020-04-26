@@ -1,0 +1,167 @@
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <div class="box-header with-border">
+          <h3 class="box-title" >Reportes</h3>
+          <div class="box-tools pull-right">
+            <button class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i></button>
+
+            <button class="btn btn-box-tool" data-widget="remove"><i class="fa fa-times"></i></button>
+          </div>
+        </div>
+    </div>
+        <!-- /.box-header -->
+        <div class="box-body">
+              <div class="row">
+                  <div class="col-md-12">
+                    <!--Contenido-->
+
+<div class="col-sm-14"  id="VerForm">
+
+<form role="form" name="frmReportes" id="frmReportes" enctype="multipart/form-data">
+    <div class="row">
+        <div class="col-lg-12 col-sm-12 col-md-12 col-xs-12">
+            <label>Los campos con (*) son olbigatorios</label>
+        </div>
+        <div class="col-lg-4 left">
+            <div class="form-group has-success">
+                <input id="txtIdReporte" type="hidden" maxlength="50" class="form-control" name="txtIdReporte" required="" placeholder="" autofocus="" />
+                <label>Espacio (*):</label>
+                <div class="form-group  has-success">
+
+                                 <select  name="txtEspacio" id="txtEspacio" class="form-control">
+                                    <option selected="true" value = "Mi Comunidad" selected >Mi Comunidad</option>
+                                    <option value = "Mi casa"  >Mi Casa</option>
+                    </select>
+                </div>
+               
+                   </div>
+        </div>
+
+
+
+        <div class="col-lg-4 left">
+            <div class="form-group has-success">
+                <label>Categoria (*):</label>
+                <div class="form-group  has-success">
+
+                                 <select  name="txtCategoria" id="txtCategoria" class="form-control">
+                                    <option selected="true" value = "Agua Caliente / Agua Fria" selected >Agua Caliente / Agua Fria</option>
+                                    <option value = "Ascensor"  >Ascensor</option>
+                                    <option value = "Baldozas"  >Baldozas</option>
+                                    <option value = "Caldera"  >Caldera</option>
+                                    <option value = "Calefacción"  >Calefacción</option>
+                                    <option value = "Cañerías"  >Cañerías</option>
+                                    <option value = "Crisis"  >Crisis</option>
+                                    <option value = "Electricidad"  >Electricidad</option>
+                                    <option value = "Emergencia"  >Emergencia</option>
+                                    <option value = "Explosión"  >Explosión</option>
+                                    <option value = "Filtración"  >Filtración</option>
+                                    <option value = "Gas"  >Gas</option>
+                                    <option value = "Grieta"  >Grieta</option>
+                                    <option value = "Infraestructura"  >Infraestructura</option>
+                                    <option value = "Paredes"  >Paredes</option>
+                                    <option value = "Pelea"  >Pelea</option>
+                                    <option value = "Pisos"  >Pisos</option>
+                                    <option value = "Robo"  >Robo</option>
+                                    <option value = "Ruido"  >Ruido</option>
+                                    <option value = "Ventanas"  >Ventanas</option>
+                    </select>
+                </div>
+               
+                   </div>
+            
+            
+            </div>
+            <div class="col-lg-4 left">
+                <div class="form-group has-success">
+                    <label>Telefono (*):</label>
+                    <input id="txtTelefono" type="text" maxlength="20" class="form-control" name="txtTelefono" required="" placeholder="Ingrese el Teléfono" autofocus="" />
+                </div>
+            </div>
+
+            <div class="col-lg-8 left">
+                <div class="form-group has-success">
+                    <label>Titulo (*):</label>
+                    <input id="txtTitulo" type="text" maxlength="100" class="form-control" name="txtTitulo" required="" placeholder="Ingrese el Título" autofocus="" />
+                </div>
+            </div>
+            <div class="col-lg-8 left">
+                <div class="form-group has-success">
+                   <label>Descripción (*):</label>
+                    <input id="txtDescripcion" type="text" maxlength="500" class="form-control" name="txtDescripcion" required="" placeholder="Ingrese la Descripción" autofocus="" />
+                </div>
+            </div>
+    
+            <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 left">
+    
+    
+                <label for="inputInscripcion">Imagen:</label>
+                <div class="form-group  has-success">
+    
+                    <input id="imagenArt" type="file" class="form-control" name="imagenArt" autofocus="" />
+                    <input id="txtRutaImgArt" type="text" class="form-control" name="txtRutaImgArt" autofocus="" />
+                </div>
+            </div>
+     
+        
+        <div class="col-lg-12 col-sm-12 col-md-12 col-xs-12 left">
+            <h5></h5>
+            <button class="btn btn-success" type="submit"><i class="fa fa-floppy-o"></i> Registrar</button>
+            <a href="Reporte.php" class="btn btn-primary" ><i class="fa fa-remove"></i> Cancelar</a>
+            <hr>
+            <span class="lead text-primary"></span>
+        </div>
+
+
+
+
+    </div>
+</form>
+</div>
+<button class="btn btn-primary" id="btnNuevo"><i class="fa fa-file"></i> Nuevo</button>
+
+
+
+
+                    <br><br>
+                    <div id="VerListado" class="table-responsive">
+
+
+            <table id="tblReportes" class="table table-striped table-bordered table-condensed table-hover" cellpadding="0" cellspacing="0" width="100%">
+            <thead>
+                <tr>
+                    <th>#</th>
+                    <th>Espacio</th>
+                    <th>Categoria</th>
+                    <th>Telefono</th>
+                    <th>Titulo</th>
+                    <th>Opciones</th>
+                </tr>
+            </thead>
+
+            <tfoot>
+                <tr>
+                    <th>#</th>
+                    <th>Espacio</th>
+                    <th>Categoria</th>
+                    <th>Telefono</th>
+                    <th>Titulo</th>
+                    <th>Opciones</th>
+                </tr>
+            </tfoot>
+
+        </table>
+</div>
+                    <!--Fin-Contenido-->
+                  </div>
+              </div><!-- /.row -->
+        </div><!-- /.box-body -->
+      </div><!-- /.box -->
+
+<script type="text/javascript">
+
+$('#liAlmacen').addClass("treeview active");
+$('#liReportes').addClass("active");
+
+//$("#txtNombre").numeric();
+</script>
