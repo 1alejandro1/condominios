@@ -7,7 +7,7 @@
   <head><meta http-equiv="Content-Type" content="text/html; charset=gb18030">
 
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Software Empresarial | Soluciones Tecnologicas Alfa</title>
+    <title>Software Empresarial | ADI S.R.L.</title>
     <!-- Tell the browser to be responsive to screen width -->
     <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
     <!-- Bootstrap 3.3.5 -->
@@ -50,7 +50,7 @@ background-repeat: no-repeat;"  >
               <!-- general form elements -->
               <div class="box box-primary">
                 <div class="box-header with-border">
-                  <h3 class="box-title">Datos del Empleado</h3>
+                  <h3 class="box-title">Datos del Usuario</h3>
                 </div><!-- /.box-header -->
                 <!-- form start -->
                 <form role="form" id="frmAcceder" name="frmAcceder">
@@ -76,7 +76,7 @@ background-repeat: no-repeat;"  >
                               <li><a href="#"><strong>Telefono:</strong>&nbsp; <?php echo $_SESSION["telefono"]?> <span class="pull-right badge bg-blue"><i class="fa fa-fw fa-mobile-phone"></i></span></a></li>
                               <li><a href="#"><strong>Direccion:</strong>&nbsp; <?php echo $_SESSION["direccion"]?> <span class="pull-right badge bg-aqua"><i class="fa fa-fw fa-taxi"></i></span></a></li>
                               <li><a href="#"><strong>Email:</strong>&nbsp; <?php echo $_SESSION["email"]?> <span class="pull-right badge bg-green"><i class="fa fa-fw fa-envelope"></i></span></a></li>
-                              <li><a href="#"><strong>Usuario:</strong>&nbsp; <?php echo $_SESSION["login"]?> <span class="pull-right badge bg-aqua"><i class="fa fa-fw fa-user"></i></span></a></li>
+                              <li><a href="#"><strong>Tipo de Usuario:</strong>&nbsp; <?php echo $_SESSION["login"]?> <span class="pull-right badge bg-aqua"><i class="fa fa-fw fa-user"></i></span></a></li>
                             </ul>
                           </div>
                         </div><!-- /.widget-user -->
@@ -103,7 +103,7 @@ background-repeat: no-repeat;"  >
                   <table class="table table-hover" id="tblSucursal">
                     <tr>
                       <th>Opcion</th>
-                          <th>Sucursal</th>
+                          <th>Condominios</th>
                       <th>Logo</th>
 
                     </tr>
