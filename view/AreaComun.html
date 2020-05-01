@@ -1,0 +1,150 @@
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <div class="box-header with-border">
+          <h3 class="box-title" >Área Común</h3>
+          <div class="box-tools pull-right">
+            <button class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i></button>
+
+            <button class="btn btn-box-tool" data-widget="remove"><i class="fa fa-times"></i></button>
+          </div>
+        </div>
+    </div>
+        <!-- /.box-header -->
+        <div class="box-body">
+              <div class="row">
+                  <div class="col-md-12">
+                    <!--Contenido-->
+
+<div class="col-sm-14"  id="VerForm">
+
+<form role="form" name="frmAreaComun" id="frmAreaComun" enctype="multipart/form-data">
+    <div class="row">
+        <div class="col-lg-12 col-sm-12 col-md-12 col-xs-12">
+            <label>Los campos con (*) son olbigatorios</label>
+        </div>
+        <div class="col-lg-4 left">
+            <div class="form-group has-success">
+                <input id="txtIdAreaComun" type="hidden" maxlength="10" class="form-control" name="txtIdAreaComun" required="" placeholder="" autofocus="" />
+                <label>Nombre (*):</label>
+                <input id="txtNombre" type="text" maxlength="150" class="form-control" name="txtNombre" required="" placeholder="Nombre del Espacio Común" autofocus="" />
+            </div>
+        </div>
+
+
+
+        <div class="col-lg-4 left">
+            <div class="form-group has-success">
+                <label>¿Se puede Reservar? (*):</label>
+                <div class="form-group  has-success">
+
+                                 <select  name="txtReserva" id="txtReserva" class="form-control">
+                                    <option selected="true" value = "Si" selected >Si</option>
+                                    <option value = "No"  >No</option>
+                    </select>
+                </div>
+               
+                   </div>
+            
+            </div>
+            <div class="col-lg-4 left">
+                <div class="form-group has-success">
+                    <label>¿Crear reservas con forrmato de bloque? (*):</label>
+                    <div class="form-group  has-success">
+    
+                                     <select  name="txtReservaBloque" id="txtReservaBloque" class="form-control">
+                                        <option selected="true" value = "Si" selected >Si</option>
+                                        <option value = "No"  >No</option>
+                        </select>
+                    </div>
+                   
+                       </div>
+            </div>
+
+            <div class="col-lg-8 left">
+                <div class="form-group has-success">
+                    <label>Cantidad de días limite para reservar, desde la fecha actual (*):</label>
+                    <input id="txtCantidad" type="text" maxlength="11" class="form-control" name="txtCantidad" required="" placeholder="Ingrese la Cantidad de días límite" autofocus="" />
+                </div>
+            </div>
+            <div class="col-lg-8 left">
+                <div class="form-group has-success">
+                   <label>Ubicación (*):</label>
+                    <input id="txtUbicacion" type="text" maxlength="400" class="form-control" name="txtUbicacion" required="" placeholder="Haz una descripción para que los propietarios o Propietarios nuevos puedan encontrarlos fácilmente." autofocus="" />
+                </div>
+            </div>
+            <div class="col-lg-8 left">
+                <div class="form-group has-success">
+                   <label>Descripción (*):</label>
+                    <input id="txtDescripcion" type="text" maxlength="500" class="form-control" name="txtDescripcion" required="" placeholder="Recuerda que puedes detallar que el mal uso o sobre tiempo de una reserva de esta àrea común puede conllevar multas" autofocus="" />
+                </div>
+            </div>
+    
+            <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 left">
+    
+    
+                <label for="inputInscripcion">Imagen:</label>
+                <div class="form-group  has-success">
+    
+                    <input id="imagenArt" type="file" class="form-control" name="imagenArt" autofocus="" />
+                    <input id="txtRutaImgArt" type="text" class="form-control" name="txtRutaImgArt" autofocus="" />
+                </div>
+            </div>
+     
+        
+        <div class="col-lg-12 col-sm-12 col-md-12 col-xs-12 left">
+            <h5></h5>
+            <button class="btn btn-success" type="submit"><i class="fa fa-floppy-o"></i> Registrar</button>
+            <a href="AreaComun.php" class="btn btn-primary" ><i class="fa fa-remove"></i> Cancelar</a>
+            <hr>
+            <span class="lead text-primary"></span>
+        </div>
+
+
+
+
+    </div>
+</form>
+</div>
+<button class="btn btn-primary" id="btnNuevo"><i class="fa fa-file"></i> Nuevo</button>
+
+
+
+
+                    <br><br>
+                    <div id="VerListado" class="table-responsive">
+
+
+            <table id="tblAreaComun" class="table table-striped table-bordered table-condensed table-hover" cellpadding="0" cellspacing="0" width="100%">
+            <thead>
+                <tr>
+                    <th>#</th>
+                    <th>Nombre</th>
+                    <th>Se puede Reservar</th>
+                    <th>Opciones</th>
+                </tr>
+            </thead>
+
+            <tfoot>
+                <tr>
+                    <th>#</th>
+                    <th>Nombre</th>
+                    <th>Se puede Reservar</th>
+                    <th>Opciones</th>
+                </tr>
+            </tfoot>
+
+        </table>
+</div>
+                    <!--Fin-Contenido-->
+                  </div>
+              </div><!-- /.row -->
+        </div><!-- /.box-body -->
+      </div><!-- /.box -->
+
+<script type="text/javascript">
+
+$('#liAlmacen').addClass("treeview active");
+$('#liAreaComun').addClass("active");
+
+//$("#txtNombre").numeric();
+</script>
